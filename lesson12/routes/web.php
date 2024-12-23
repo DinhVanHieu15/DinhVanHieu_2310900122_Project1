@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\DVH_QUAN_TRIConntroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,3 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/dvh-admin',function(){
+    return view('dvhAdmins.index');
+});

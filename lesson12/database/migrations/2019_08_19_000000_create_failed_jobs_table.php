@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('DVH_LOAI_SAN_PHAM', function (Blueprint $table) {
+        Schema::create('failed_jobs', function (Blueprint $table) {
             $table->id();
-            $table -> string('dvhMaLoai',255)->unique();
-            $table -> string('dvhTenLoai',255);
-            $table -> tinyInteger('dvhTrangThai');
-            $table->timestamps();
+            $table->string('uuid')->unique();
+            $table->text('connection');
+            $table->text('queue');
+            $table->longText('payload');
+            $table->longText('exception');
+            $table->timestamp('failed_at')->useCurrent();
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('DVH_LOAI_SAN_PHAM');
+        Schema::dropIfExists('failed_jobs');
     }
 };

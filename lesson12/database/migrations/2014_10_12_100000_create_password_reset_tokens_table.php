@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('DVH_LOAI_SAN_PHAM', function (Blueprint $table) {
-            $table->id();
-            $table -> string('dvhMaLoai',255)->unique();
-            $table -> string('dvhTenLoai',255);
-            $table -> tinyInteger('dvhTrangThai');
-            $table->timestamps();
+        Schema::create('password_reset_tokens', function (Blueprint $table) {
+            $table->string('email')->primary();
+            $table->string('token');
+            $table->timestamp('created_at')->nullable();
         });
     }
 
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('DVH_LOAI_SAN_PHAM');
+        Schema::dropIfExists('password_reset_tokens');
     }
 };

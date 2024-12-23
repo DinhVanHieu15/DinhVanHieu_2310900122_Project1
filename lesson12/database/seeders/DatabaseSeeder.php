@@ -18,13 +18,5 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
-
-
-        $this->call([
-            DVH_Quan_TriTableSeeder::class,
-            DVH_SAN_PHAMTableSeeder::class,
-            DVH_LOAI_PHAMTableSeeder::class
-        ]);
     }
 }
